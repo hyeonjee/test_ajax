@@ -26,6 +26,7 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
     writer = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    deleted = models.BooleanField(default=False)
 
 
 class Like(models.Model):
